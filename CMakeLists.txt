@@ -56,6 +56,8 @@ option(FMT_FUZZ "Generate the fuzz target." OFF)
 option(FMT_CUDA_TEST "Generate the cuda-test target." OFF)
 
 project(FMT CXX)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 
 # Get version from core.h
 file(READ include/fmt/core.h core_h)
